@@ -1,7 +1,8 @@
+version: v1alpha1
 clusters:
   - name: hubartem
     stage: dev
-    type: controlplane
+    type: hub
     dnsName: hubartem-dev.stackit.run
     ssoOrg: la-demos
     ssoTeam: g-gitops
@@ -26,35 +27,36 @@ clusters:
     services:
       argocd:
         status: disabled
-      certManager:
+      cert-manager:
         status: enabled
-        clusterIssuer:
-          name: letsencrypt-staging
-          email: artem.lajko@iits-consulting.de
-          server: https://acme-staging-v02.api.letsencrypt.org/directory
-      externalDns:
+        config:
+          clusterIssuer:
+            email: artem.lajko@iits-consulting.de
+            name: letsencrypt-staging
+            server: https://acme-staging-v02.api.letsencrypt.org/directory
+      external-dns:
         status: enabled
-      externalSecrets:
+      external-secrets:
         status: enabled
-      kubePrometheusStack:
+      homer-dashboard:
         status: enabled
-      traefik:
+      kube-prometheus-stack:
         status: enabled
       kyverno:
         status: enabled
-      kyvernoPolicies:
+      kyverno-policies:
         status: enabled
-      kyvernoPolicyReport:
+      kyverno-policy-reporter:
         status: enabled
       loki:
         status: enabled
-      homerDashboard:
-        status: enabled
-      oauth2Proxy:
-        status: enabled
-      metricsServer:
-        status: disabled
-      metalLb:
-        status: disabled
       longhorn:
         status: disabled
+      metallb:
+        status: disabled
+      metrics-server:
+        status: disabled
+      oauth2-proxy:
+        status: enabled
+      traefik:
+        status: enabled
