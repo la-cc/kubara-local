@@ -1,0 +1,11 @@
+namespace:
+  labels:
+    project-name: "hubartem"
+    stage: "dev"
+metrics-server:
+  imagePullSecrets:
+    - name: image-pull-secret
+  serviceMonitor:
+    additionalLabels:
+      monitoring:
+        instance: "hubartem-dev"
