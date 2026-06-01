@@ -1,3 +1,4 @@
+---
 kyverno-policies:
   podSecurityStandard: "baseline"
   autogenControllers: none
@@ -319,7 +320,6 @@ global:
   # allowedIssuerDomains:
   # -- specify registries which are trusted. Multiple registries separated by "|"
   # allowedImageRegistries: change-me
-
 # Kyverno Policies:
 argoCD:
   enabled: true
@@ -333,7 +333,6 @@ argoCD:
     webhookFailurePolicy: "Fail"
     actionOverride: "Audit"
     enableBackgroundScanning: true
-
 itGrundschutz:
   base:
     enabled: true
@@ -382,7 +381,6 @@ itGrundschutz:
       webhookFailurePolicy: "Fail"
       enableBackgroundScanning: true
       actionOverride: "Audit"
-
 bestPractices:
   enabled: true
   disallowDefaultNamespace:
@@ -428,7 +426,7 @@ bestPractices:
           -----END PUBLIC KEY-----
         pullSecret: regcred-prod
         mutateDigest: false  # Optional override
-        verifyDigest: true   # Optional override
+        verifyDigest: true  # Optional override
 certManager:
   enabled: true
   limitDnsNames:

@@ -4,7 +4,6 @@ ingress:
   path: "/"
   ingressClassName: traefik
   annotations:
-
     cert-manager.io/cluster-issuer: letsencrypt-staging
     traefik.ingress.kubernetes.io/router.middlewares: oauth2-proxy-oauth-auth@kubernetescrd
 namespace:

@@ -18,7 +18,6 @@ policy-reporter:
       enabled: true
       className: traefik
       annotations:
-
         cert-manager.io/cluster-issuer: letsencrypt-staging
         traefik.ingress.kubernetes.io/app-root: /kyverno/#/
         traefik.ingress.kubernetes.io/router.middlewares: |-
