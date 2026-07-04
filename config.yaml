@@ -1,4 +1,4 @@
-version: v1alpha1
+version: v1alpha2
 clusters:
   - name: test-cluster
     stage: local

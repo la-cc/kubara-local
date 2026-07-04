@@ -188,20 +188,16 @@ prometheus-blackbox-exporter:
     imageRegistry: quay.io
 
 externalSecrets:
+
   secretStoreRef:
     kind: ClusterSecretStore
     name: test-cluster-local
 
-  secretStores:
-    test-cluster-local:
-      kind: ClusterSecretStore
-      name: test-cluster-local
 
   secrets:
     grafana-admin-credentials:
-      secretStoreRef: test-cluster-local
       dataFrom:
-        - remoteKey: grafana_credentials
+        - remoteKey: test-cluster/local/kube-prometheus-stack/grafana_credentials
 
 namespace:
   labels:
