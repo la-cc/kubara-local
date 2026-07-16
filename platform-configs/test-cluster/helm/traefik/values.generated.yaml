@@ -3,7 +3,6 @@
 # To customize values, you can add additional files named values-*.yaml to this directory.
 traefik:
   deployment:
-    replicas: 3
     imagePullSecrets:
       - name: image-pull-secret
   api:

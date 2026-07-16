@@ -3,7 +3,7 @@ clusters:
   - name: test-cluster
     stage: local
     type: hub
-    dnsName: 192.168.97.3.traefik.me
+    dnsName: 192.168.97.4.traefik.me
     ssoOrg: local
     ssoTeam: local
     ingressClassName: traefik
@@ -23,7 +23,7 @@ clusters:
         status: enabled
         config:
           clusterIssuer:
-            email: artem@mail-me.com
+            email: yourname@your-domain.de
             name: letsencrypt-staging
             server: https://acme-staging-v02.api.letsencrypt.org/directory
       external-dns:
@@ -49,6 +49,8 @@ clusters:
       metrics-server:
         status: enabled
       oauth2-proxy:
+        status: disabled
+      reloader:
         status: disabled
       traefik:
         status: enabled
