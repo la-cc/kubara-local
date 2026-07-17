@@ -3,7 +3,7 @@ clusters:
   - name: test-cluster
     stage: local
     type: hub
-    dnsName: 192.168.97.4.traefik.me
+    dnsName: 192.168.97.3.traefik.me
     ssoOrg: local
     ssoTeam: local
     ingressClassName: traefik
