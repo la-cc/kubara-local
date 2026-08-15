@@ -12,10 +12,10 @@ clusters:
       repo:
         https:
           configs:
-            url: https://github.com/your-user/your-gitops-repo.git
+            url: https://github.com/la-cc/kubara-local.git
             targetRevision: main
           components:
-            url: https://github.com/your-user/your-gitops-repo.git
+            url: https://github.com/la-cc/kubara-local.git
             targetRevision: main
     catalogs:
       - oci://ghcr.io/kubara-io/catalogs/general:2.0.0
