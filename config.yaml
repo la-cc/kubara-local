@@ -1,4 +1,4 @@
-version: v1alpha4
+version: v1alpha5
 clusters:
   - name: test-cluster
     stage: local
@@ -10,15 +10,16 @@ clusters:
     argocd:
       selfManaged: enabled
       repo:
-        https:
+        authMode: https
+        git:
           configs:
-            url: https://github.com/la-cc/kubara-local.git
+            url: https://github.com/your-user/your-gitops-repo.git
             targetRevision: main
           components:
-            url: https://github.com/la-cc/kubara-local.git
+            url: https://github.com/your-user/your-gitops-repo.git
             targetRevision: main
     catalogs:
-      - ./catalogs/general
+      - oci://ghcr.io/kubara-io/catalogs/general:7.0.0
     services:
       cert-manager:
         status: enabled
@@ -27,6 +28,8 @@ clusters:
             email: yourname@your-domain.de
             name: letsencrypt-staging
             server: https://acme-staging-v02.api.letsencrypt.org/directory
+      crossplane:
+        status: disabled
       external-dns:
         status: disabled
       external-secrets:

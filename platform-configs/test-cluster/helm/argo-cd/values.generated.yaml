@@ -31,11 +31,11 @@ bootstrapValues:
     test-cluster-local:
       projectName: "test-cluster-local"
       platformComponents:
-        repoURL: "https://github.com/la-cc/kubara-local.git"
+        repoURL: "https://github.com/your-user/your-gitops-repo.git"
         path: "platform-components/helm"
         targetRevision: "main"
       platformConfigs:
-        repoURL: "https://github.com/la-cc/kubara-local.git"
+        repoURL: "https://github.com/your-user/your-gitops-repo.git"
         path: "platform-configs"
         targetRevision: "main"
       apps:
@@ -46,6 +46,9 @@ bootstrapValues:
         cert-manager:
           name: cert-manager
           path: cert-manager
+        crossplane:
+          name: crossplane
+          path: crossplane
         external-dns:
           name: external-dns
           path: external-dns
@@ -103,6 +106,7 @@ inClusterSecretLabels:
 ## Hub labels
   argocd: "enabled"
   cert-manager: "enabled"
+  crossplane: "disabled"
   external-dns: "disabled"
   external-secrets: "enabled"
   homer-dashboard: "enabled"
